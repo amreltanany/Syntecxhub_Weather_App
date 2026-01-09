@@ -5,7 +5,7 @@ html, body, #root {
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
-    overflow-y: auto;
+    overflow-y: auto; 
 }
 
 /* 2. SPLIT LAYOUT */
@@ -147,22 +147,16 @@ html, body, #root {
     /* Allow forecast row to scroll horizontally if it's too wide */
     /* 7. FORECAST SECTION */
     .forecast-row {
-        display: flex; /* Changed from grid to flex for better control */
-        flex-wrap: wrap; /* Allows them to wrap on desktop if needed */
-        justify-content: space-between;
-        gap: 20px;
-        width: 100%;
-        margin-top: 40px;
+        display: flex; /* Switch to flex for easier horizontal scrolling */
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Enable horizontal scroll */
+        gap: 15px;
+        padding: 10px 5px 20px 5px;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .forecast-card {
-        background: white;
-        padding: 25px 15px;
-        border-radius: 20px;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        flex: 1; /* This makes them equal width on desktop */
-        min-width: 150px; /* Prevents them from getting too squashed */
+        flex: 0 0 140px; /* Force each card to stay 140px wide and not shrink */
     }
 }
 
