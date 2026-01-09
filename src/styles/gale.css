@@ -4,7 +4,8 @@ html, body, #root {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 /* 2. SPLIT LAYOUT */
@@ -118,7 +119,13 @@ html, body, #root {
         padding: 30px 20px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-
+   
+        .sidebar .search-container {
+            width: 100%;
+            max-width: 500px; /* Prevents the search bar from being too wide on tablets */
+            margin: 0 auto;
+        }
+   
     /* Adjust results area padding */
     .results-area {
         padding: 20px;
@@ -139,9 +146,16 @@ html, body, #root {
 
     /* Allow forecast row to scroll horizontally if it's too wide */
     .forecast-row {
-        grid-template-columns: repeat(5, minmax(120px, 1fr));
+        display: flex; 
+        flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 30px;
+        gap: 15px;
+        padding: 10px 5px 20px 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .forecast-card {
+        flex: 0 0 140px; 
     }
 }
 
