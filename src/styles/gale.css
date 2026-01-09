@@ -169,4 +169,17 @@ html, body, #root {
         font-size: 1.4rem;
         letter-spacing: 3px;
     }
+    .forecast-row {
+        display: flex !important;
+        flex-wrap: nowrap !important; 
+        overflow-x: auto !important;
+        gap: 10px;
+        padding-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .forecast-card {
+        flex: 0 0 auto; 
+        width: 120px;
+    }
 }
